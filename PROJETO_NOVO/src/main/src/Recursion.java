@@ -17,16 +17,22 @@ public class Recursion {
     }
 
     //Cálculo de 1 + 1/2 + 1/3 + 1/4 + ... + 1/N.
-    public static double fracionador(int vezes){
+    public static double fracionador(double vezes){
         if(vezes == 0) return 0;
         return 1/vezes + fracionador(--vezes);
     }
-
 
     // metodo de inversao de string
     public static String inverter(String s){
         if(s.length() == 0) return "";
         return inverter(s.substring(1)) + s.charAt(0);
     }
+
+    // Verifique se uma palavra é palíndromo (Ex. aba, abcba, xyzzyx)
+    public static boolean palindromo(String s){
+        if(s.length() == 0) return true;
+        return s.charAt(0) == s.charAt(s.length()-1) && palindromo(s.substring(1,s.length()-1));
+    }
+
 }
 
